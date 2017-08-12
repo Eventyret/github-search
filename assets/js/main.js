@@ -21,18 +21,17 @@ $(document).ready(function () {
                     $('#repos').append(`
                     <div class="well">
                         <div class="row">
-                            <div class="col-md-6">
+                            <div class="col-md-7">
                             <strong>${repoData.name}</strong> is written in mostly: <strong>${repoData.language}</strong>
                             </div>
-                            <div class="col-md-4">
-                                <span class="label label-default">Public Repos: ${repoData.forks_count}</span>
-                                <span class="label label-default">Public Gists: ${repoData.watchers_count}</span>
-                                <span class="label label-info">Followers: ${repoData.stargazers_count}</span>
+                            <div class="col-md-3">
+                            <span class="label label-default">Forks: ${repoData.forks_count}</span>
+                            <span class="label label-primary">Watchers: ${repoData.watchers_count}</span>
+                            <span class="label label-success">Stars: ${repoData.stargazers_count}</span>
                                 
                             </div>
                             <div class="col-md-2">
                                 <a href="${repoData.html_url}" class="btn btn-primary" target="_blank">Visit Repo</a>
-
                             </div>
                         </div>
                     </div>
@@ -66,11 +65,8 @@ $(document).ready(function () {
               </div>
             </div>
           </div>
-
           <h3 class="page-header">Latest Repos</h3>
-          <div id="repos">
-          
-          </div>
+          <div id="repos"></div>
             `);
         });
     });
