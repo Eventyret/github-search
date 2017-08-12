@@ -6,7 +6,7 @@ $(document).ready(function () {
 
         // Make API request to Github
         $.ajax({
-            url: 'https://api.github.com/users/'+username,
+            url:'https://api.github.com/users/'+username,
             data: {
                 client_id: clientid,
                 client_secret: clientsecret,
@@ -15,7 +15,7 @@ $(document).ready(function () {
             }
         }).done(function(userData) {
             $.ajax({
-                url: 'https://api.github.com/users/'+username+'/repos'
+                url:'https://api.github.com/users/'+username+'/repos',
             }).done(function(repoData){
                 $.each(repoData, function(index, repoData){
                     $('#repos').append(`
@@ -41,7 +41,7 @@ $(document).ready(function () {
             $('#profile').html(`
             <div class="panel panel-default">
             <div class="panel-heading">
-              <h3 class="text-center">Github Profile of ${userData.name}</strong></h3>
+              <h3 class="text-center">Github Profile of <strong>${userData.name}</strong></h3>
             </div>
             <div class="panel-body">
               <div class="row">
